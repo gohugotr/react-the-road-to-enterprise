@@ -101,3 +101,10 @@ module.exports = {
   },
 }
 ```
+- **vscode.settings** ayarlarına eklenenler
+```js script  
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "vetur.validation.style": false,
+```
