@@ -221,7 +221,9 @@ are specified*/
     }
 }
 ```
+
 - **tsconfig.json** güncellendi.
+
 ```js script
 {
   "extends": "./tsconfig.paths.json",
@@ -251,4 +253,19 @@ are specified*/
     "src"
   ]
 }
+```
+
+### Cypress & Testing Library
+
+- `yarn add cypress @testing-library/cypress --dev`
+- **package.json**
+
+```js script
+"scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test:unit": "craco test",
+    "test:e2e:open": "start-server-and-test start http-get://localhost:3000 cypress:open", "test:e2e:run": "start-server-and-test start http-get://localhost:3000 cypress:run", "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
+},
 ```
