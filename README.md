@@ -146,13 +146,17 @@ module.exports = {
   plugins: [require('@tailwindcss/forms')],
 }
 ```
+
 - **src/index.css**
+
 ```js script
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
+
 - **prettier.config.js**
+
 ```js script
 module.exports = {
   endOfLine: 'lf',
@@ -168,14 +172,18 @@ module.exports = {
   useTabs: false,
 }
 ```
-import yapılırken artık aşağıdaki gibi yapabiliriz. Bunu yapmak için önce **craco** için ***craco-alias*** adlı bir eklenti kurmamız gerekiyor.
+
+import yapılırken artık aşağıdaki gibi yapabiliriz. Bunu yapmak için önce **craco** için **_craco-alias_** adlı bir eklenti kurmamız gerekiyor.
+
 ```js script
 // ugly
 import Component from '../../../components/common/MyComponent'
 // nice
 import Component from '@/components/common/Component'
 ```
+
 - `yarn add craco-alias --dev`
+
 ```js script
 const postcssConfig = require('./postcss.config')
 const cracoAlias = require('craco-alias')
@@ -199,5 +207,48 @@ are specified*/
   ],
 }
 ```
+
 `source` , `baseUrl` ve `tsConfigPath` özelliklerini belirtmemiz gerekiyor. Henüz `tsconfig.paths.json` dosyamız yok, onu oluşturalım.
+
 - **tsconfig.paths.json**
+
+```js script
+{
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    }
+}
+```
+- **tsconfig.json** güncellendi.
+```js script
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es5",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
+```
