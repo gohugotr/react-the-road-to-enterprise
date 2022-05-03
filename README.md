@@ -40,3 +40,4 @@
             ], 
         }
     ```
+- `npm install -D stylelint-config-css-modules stylelint-config-prettier stylelint-config-recess-order stylelint-config-standard stylelint-scss`
