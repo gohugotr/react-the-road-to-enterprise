@@ -146,3 +146,25 @@ module.exports = {
   plugins: [require('@tailwindcss/forms')],
 }
 ```
+- **src/index.css**
+```js script
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+- **prettier.config.js**
+```js script
+module.exports = {
+  endOfLine: 'lf',
+  jsxBracketSameLine: false,
+  jsxSingleQuote: true,
+  printWidth: 80,
+  proseWrap: 'never',
+  quoteProps: 'as-needed',
+  semi: false,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'es5',
+  useTabs: false,
+}
+```
