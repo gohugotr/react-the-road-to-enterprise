@@ -108,3 +108,4 @@ module.exports = {
   "scss.validate": false,
   "vetur.validation.style": false,
 ```
+- `yarn add node-sass`
