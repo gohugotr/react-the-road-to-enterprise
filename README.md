@@ -199,3 +199,5 @@ are specified*/
   ],
 }
 ```
+`source` , `baseUrl` ve `tsConfigPath` özelliklerini belirtmemiz gerekiyor. Henüz `tsconfig.paths.json` dosyamız yok, onu oluşturalım.
+- **tsconfig.paths.json**
