@@ -34,6 +34,7 @@ module.exports = {
 ```
 
 - **postcss.config.js**
+
   ```js script
   module.exports = {
     plugins: [
@@ -51,6 +52,7 @@ module.exports = {
     ],
   }
   ```
+
 - `npm install -D stylelint-config-css-modules stylelint-config-prettier stylelint-config-recess-order stylelint-config-standard stylelint-scss`
 
 - **stylelint.config.js**
@@ -271,13 +273,46 @@ are specified*/
     "cypress:open": "cypress open"
 },
 ```
+
 - `yarn add @testing-library/react @testing-library/jest-dom @testing-library/react-hooks --dev`
 Create React App, kutudan çıktığı haliyle test çalıştırıcısı olarak yapılandırılmış Jest ile birlikte gelir. Bu, Jest'in çalışması için herhangi bir şey yüklememiz ve yapılandırmamız gerekmediği anlamına gelir. Ancak, Test Kitaplığı için bağımlılıklar yüklememiz gerekiyor.
 İşte bu kütüphanelerin yaptıkları:
 - `@testing-library/react:` React bileşenlerinin oluşturulmasıyla ilgilenir ve öğelerin yakalanması için yöntemler sağlar.
 - `@testing-library/jest-dom`, Jest'e birçok faydalı eşleşme ekler
 - `@test-library/react-hooks:` özel kancaları test etmeyi çok kolaylaştırır
-Son olarak, setupTests.ts dosyasını oluşturmamız ve @testing-library/jest-dom dosyasını içe aktarmamız gerekiyor. 
+Son olarak, setupTests.ts dosyasını oluşturmamız ve @testing-library/jest-dom dosyasını içe aktarmamız gerekiyor.
 - **src/setupTests.ts**
 `import '@testing-library/jest-dom';`
 - `yarn add husky lint-staged prettier -dev`
+
+## Çoğu proje için önerilen src yapısı
+
+src
+|-- api
+|-- assets
+|-- fonts
+    |-- images
+|-- components
+    |-- common
+            |-- button
+                    |-- Button.tsx
+            |-- form
+                    |-- TextField.tsx
+                    |-- FieldLabel.tsx
+        |-- text
+                |-- Typography.tsx
+                |-- Headline.tsx
+    |-- transitions
+|-- hooks
+|-- context
+|-- layout
+|-- config
+|-- constants
+|-- helpers
+|-- intl (optional)
+|-- services
+|-- store
+|-- styles
+|-- types
+|-- views
+
