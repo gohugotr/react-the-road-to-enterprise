@@ -265,7 +265,19 @@ are specified*/
     "start": "craco start",
     "build": "craco build",
     "test:unit": "craco test",
-    "test:e2e:open": "start-server-and-test start http-get://localhost:3000 cypress:open", "test:e2e:run": "start-server-and-test start http-get://localhost:3000 cypress:run", "cypress:run": "cypress run",
+    "test:e2e:open": "start-server-and-test start http-get://localhost:3000 cypress:open", 
+    "test:e2e:run": "start-server-and-test start http-get://localhost:3000 cypress:run", 
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open"
 },
 ```
+- `yarn add @testing-library/react @testing-library/jest-dom @testing-library/react-hooks --dev`
+Create React App, kutudan çıktığı haliyle test çalıştırıcısı olarak yapılandırılmış Jest ile birlikte gelir. Bu, Jest'in çalışması için herhangi bir şey yüklememiz ve yapılandırmamız gerekmediği anlamına gelir. Ancak, Test Kitaplığı için bağımlılıklar yüklememiz gerekiyor.
+İşte bu kütüphanelerin yaptıkları:
+- `@testing-library/react:` React bileşenlerinin oluşturulmasıyla ilgilenir ve öğelerin yakalanması için yöntemler sağlar.
+- `@testing-library/jest-dom`, Jest'e birçok faydalı eşleşme ekler
+- `@test-library/react-hooks:` özel kancaları test etmeyi çok kolaylaştırır
+Son olarak, setupTests.ts dosyasını oluşturmamız ve @testing-library/jest-dom dosyasını içe aktarmamız gerekiyor. 
+- **src/setupTests.ts**
+`import '@testing-library/jest-dom';`
+- `yarn add husky lint-staged prettier -dev`

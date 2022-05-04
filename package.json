@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
@@ -45,8 +45,17 @@
       "last 1 safari version"
     ]
   },
+  "husky": { 
+    "hooks": {
+      "pre-commit": "lint-staged" }
+  }, 
+  "lint-staged": {
+      "src/*.{ts,tsx}": "eslint", 
+      "src/*.{css,scss}": "stylelint",
+      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u" },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
+    "@testing-library/react-hooks": "^8.0.0",
     "autoprefixer": "^9.8.8",
     "craco-alias": "^3.0.1",
     "cypress": "^9.6.0",
